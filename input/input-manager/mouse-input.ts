@@ -6,6 +6,7 @@ import { EventBus } from '@app/engine/events/event-bus';
 import { EventBusEvent } from '@app/engine/events/event-bus-events';
 import { UrlManager } from '@app/engine/input/url-manager';
 import { lineManagerInstance } from '@app/engine/rendering/line-manager';
+import { KeepTrack } from '@app/keeptrack';
 import { SelectSatManager } from '@app/plugins/select-sat-manager/select-sat-manager';
 import { SoundNames } from '@app/plugins/sounds/sounds';
 import { TimeMachine } from '@app/plugins/time-machine/time-machine';
@@ -15,7 +16,6 @@ import { errorManagerInstance } from '../../utils/errorManager';
 import { getEl } from '../../utils/get-el';
 import { InputManager, LatLon } from '../input-manager';
 import { KeyboardInput } from './keyboard-input';
-import { KeepTrack } from '@app/keeptrack';
 
 export class MouseInput {
   private dragHasMoved = false;

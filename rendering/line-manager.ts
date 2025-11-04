@@ -8,6 +8,18 @@ import { BufferAttribute } from '@app/engine/rendering/buffer-attribute';
 import { WebGlProgramHelper } from '@app/engine/rendering/webgl-program';
 import { BaseObject, Degrees, DetailedSatellite, DetailedSensor, Kilometers, RaeVec3 } from '@ootk/src/main';
 import { mat4, vec3, vec4 } from 'gl-matrix';
+import { ObjToObjLine } from '../../app/rendering/line-manager/obj-to-obj-line';
+import { RefToRefLine } from '../../app/rendering/line-manager/ref-to-ref-line';
+import { SatRicLine } from '../../app/rendering/line-manager/sat-ric-line';
+import { SatScanEarthLine } from '../../app/rendering/line-manager/sat-scan-earth-line';
+import { SatToCelestialBodyLine } from '../../app/rendering/line-manager/sat-to-celestial-body';
+import { SatToRefLine } from '../../app/rendering/line-manager/sat-to-ref-line';
+import { SatToSunLine } from '../../app/rendering/line-manager/sat-to-sun-line';
+import { SensorScanHorizonLine } from '../../app/rendering/line-manager/sensor-scan-horizon-line';
+import { SensorToMoonLine } from '../../app/rendering/line-manager/sensor-to-moon-line';
+import { SensorToRaeLine } from '../../app/rendering/line-manager/sensor-to-rae-line';
+import { SensorToSatLine } from '../../app/rendering/line-manager/sensor-to-sat-line';
+import { SensorToSunLine } from '../../app/rendering/line-manager/sensor-to-sun-line';
 import { Container } from '../core/container';
 import { Scene } from '../core/scene';
 import { ServiceLocator } from '../core/service-locator';
@@ -18,19 +30,7 @@ import { EARTH_OBLIQUITY_RADIANS } from '../utils/constants';
 import { glsl } from '../utils/development/formatter';
 import { DepthManager } from './depth-manager';
 import { Line, LineColor, LineColors } from './line-manager/line';
-import { ObjToObjLine } from './line-manager/obj-to-obj-line';
 import { OrbitPathLine } from './line-manager/orbit-path';
-import { RefToRefLine } from './line-manager/ref-to-ref-line';
-import { SatRicLine } from './line-manager/sat-ric-line';
-import { SatScanEarthLine } from './line-manager/sat-scan-earth-line';
-import { SatToCelestialBodyLine } from './line-manager/sat-to-celestial-body';
-import { SatToRefLine } from './line-manager/sat-to-ref-line';
-import { SatToSunLine } from './line-manager/sat-to-sun-line';
-import { SensorScanHorizonLine } from './line-manager/sensor-scan-horizon-line';
-import { SensorToMoonLine } from './line-manager/sensor-to-moon-line';
-import { SensorToRaeLine } from './line-manager/sensor-to-rae-line';
-import { SensorToSatLine } from './line-manager/sensor-to-sat-line';
-import { SensorToSunLine } from './line-manager/sensor-to-sun-line';
 
 export class LineManager {
   attribs = {
