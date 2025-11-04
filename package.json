@@ -1,0 +1,13 @@
+{
+  "name": "doris",
+  "version": "1.0.0",
+  "author": "Theodore Kruczek",
+  "description": "Definitely Overengineered Rendering and Input System. Internal submodule for multiple TypeScript projects. Not intended for standalone use.",
+  "license": "AGPL-3.0",
+  "homepage": "https://keeptrack.space",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
