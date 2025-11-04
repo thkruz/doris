@@ -38,8 +38,6 @@ import { ServiceLocator } from '../core/service-locator';
 import { EventBus } from '../events/event-bus';
 import { EventBusEvent } from '../events/event-bus-events';
 import { DepthManager } from '../rendering/depth-manager';
-import { CelestialBody } from '../rendering/draw-manager/celestial-bodies/celestial-body';
-import { Earth } from '../rendering/draw-manager/earth';
 import { errorManagerInstance } from '../utils/errorManager';
 import { alt2zoom, lat2pitch, lon2yaw, normalizeAngle } from '../utils/transforms';
 import { CameraInputHandler } from './camera-input-handler';
@@ -463,21 +461,6 @@ export class Camera {
     }
 
     return vec3.fromValues(0, 0, 0);
-  }
-
-  getCameraRadius(target: EciVec3, centerBody: CelestialBody | Earth) {
-    let targetDistanceFromEarth = 0;
-
-    if (target) {
-      const gmst = ServiceLocator.getTimeManager().gmst;
-
-      this.state.camSnapToSat.altitude = SatMath.getAlt(target, gmst, centerBody.RADIUS as Kilometers);
-      targetDistanceFromEarth = this.state.camSnapToSat.altitude + RADIUS_OF_EARTH;
-    }
-    const radius = this.calcDistanceBasedOnZoom() - targetDistanceFromEarth;
-
-
-    return radius;
   }
 
   getForwardVector(): vec3 {

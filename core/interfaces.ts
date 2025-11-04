@@ -1,5 +1,5 @@
+import { ColorSchemeParams } from '@app/app/rendering/color-schemes/color-scheme';
 import { BaseObject, Degrees, DetailedSatellite, Kilometers, Meters, Milliseconds, Radians, SpaceObjectType, Vec3Flat, ZoomValue } from '@ootk/src/main';
-import type { ColorSchemeParams } from '../rendering/color-schemes/color-scheme';
 
 /** Array of ECI Coordinates [x, y, z] */
 export type EciArr3 = Vec3Flat<number>;
