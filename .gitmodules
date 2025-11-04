@@ -1,0 +1,3 @@
+[submodule "ootk"]
+	path = ootk
+	url = https://github.com/thkruz/ootk.git
