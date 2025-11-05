@@ -15,6 +15,8 @@ export interface Application {
 export class Engine {
   private static readonly instance_: Engine;
   private readonly containerElementId = 'root';
+  /** Flag to enable/disable global error trapping */
+  isGlobalErrorTrapOn = true;
 
   static getInstance(): Engine {
     if (!Engine.instance_) {
@@ -57,7 +59,7 @@ export class Engine {
 
   private addErrorTrap_() {
     globalThis.addEventListener('error', (e: ErrorEvent) => {
-      if (!settingsManager.isGlobalErrorTrapOn) {
+      if (!this.isGlobalErrorTrapOn) {
         return;
       }
       if (isThisNode()) {
@@ -69,11 +71,11 @@ export class Engine {
 
   run() {
     if (!this.isReady_) {
-      throw new Error('KeepTrack is not ready');
+      throw new Error('Application is not ready');
     }
 
     if (this.isRunning_) {
-      throw new Error('KeepTrack is already running');
+      throw new Error('Application is already running');
     }
 
     this.gameLoop_();

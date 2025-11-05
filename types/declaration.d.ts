@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { SettingsManager } from '@app/settings/settings';
-
 interface HTMLDivElement {
   addClass: (classStr: string) => void;
   removeClass: (classStr: string) => void;
@@ -16,23 +14,31 @@ interface HTMLDivElement {
   is: any;
 }
 
-declare global {
-  module '*.css';
-  module '*.jpg';
-  module '*.png';
-  module '*.svg';
-  declare module '*.mp3';
-  declare module '*.wav';
-  declare module '*.flac';
-  interface Window {
-    settingsManager: SettingsManager;
-    settingsOverride: any;
-    webkitAudioContext: any;
-    adsbygoogle: any;
-  }
-  interface Global {
-    settingsManager: SettingsManager;
-    settingsOverride: any;
-  }
-  let settingsManager: SettingsManager;
+declare module '*.css' {
+  const content: string;
+  export default content;
+}
+declare module '*.jpg' {
+  const content: string;
+  export default content;
+}
+declare module '*.png' {
+  const content: string;
+  export default content;
+}
+declare module '*.svg' {
+  const content: string;
+  export default content;
+}
+declare module '*.mp3' {
+  const content: string;
+  export default content;
+}
+declare module '*.wav' {
+  const content: string;
+  export default content;
+}
+declare module '*.flac' {
+  const content: string;
+  export default content;
 }

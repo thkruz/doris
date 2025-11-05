@@ -130,7 +130,7 @@ export class Box {
 
   init(gl: WebGL2RenderingContext): void {
     this.gl_ = gl;
-    this.textureMap_.src = `${settingsManager.installDirectory}textures/moon-1024.jpg`;
+    this.textureMap_.src = '';
 
     this.initProgram_();
     this.initBuffers_();
