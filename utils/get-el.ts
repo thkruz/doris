@@ -1,4 +1,4 @@
-import { errorManagerInstance } from '@app/engine/utils/errorManager';
+import { errorManagerInstance } from '../utils/errorManager';
 import { isThisNode } from './isThisNode';
 
 /**

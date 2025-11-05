@@ -1,7 +1,5 @@
-import { SoundNames } from '@app/plugins/sounds/sounds';
 import { html } from '../utils/development/formatter';
 import { DraggableModal } from './draggable-modal';
-import { ServiceLocator } from '../core/service-locator';
 
 interface ConfirmModalOptions {
   title?: string;
@@ -99,12 +97,12 @@ export class ModalConfirm extends DraggableModal {
   }
 
   private handleCancel(): void {
-    ServiceLocator.getSoundManager()?.play(SoundNames.CLICK);
+    // ServiceLocator.getSoundManager()?.play(SoundNames.CLICK);
     this.close();
   }
 
   private handleConfirm(): void {
-    ServiceLocator.getSoundManager()?.play(SoundNames.BUTTON_CLICK);
+    // ServiceLocator.getSoundManager()?.play(SoundNames.BUTTON_CLICK);
 
     if (this.onConfirm) {
       this.onConfirm();

@@ -1,4 +1,4 @@
-import { errorManagerInstance } from '@app/engine/utils/errorManager';
+import { errorManagerInstance } from '@engine/utils/errorManager';
 
 export const slideOutLeft = (el: HTMLElement | null, duration: number, callback?: (() => void) | null, offset?: number): void => {
   if (!el) {

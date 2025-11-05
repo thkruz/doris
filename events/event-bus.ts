@@ -1,8 +1,4 @@
-import type { MissileObject } from '@app/app/data/catalog-manager/MissileObject';
-import type { User } from '@supabase/supabase-js';
-import type { BaseObject, DetailedSatellite, DetailedSensor, Milliseconds } from '@ootk/src/main';
-import type { PanTouchEvent, TapTouchEvent } from '../input/input-manager/touch-input';
-import type { LineManager } from '../rendering/line-manager';
+import type { DetailedSatellite, DetailedSensor, Milliseconds } from '@ootk/src/main';
 import { errorManagerInstance } from '../utils/errorManager';
 import { EventBusEvent } from './event-bus-events';
 
@@ -27,25 +23,20 @@ export interface EngineEventMap {
   [EventBusEvent.changeSensorMarkers]: [string];
   [EventBusEvent.resize]: [];
   [EventBusEvent.altCanvasResize]: [];
-  [EventBusEvent.endOfDraw]: [Milliseconds];
+  [EventBusEvent.draw]: [Milliseconds];
   [EventBusEvent.onWatchlistUpdated]: [{ id: number, inView: boolean }[]];
   [EventBusEvent.onWatchlistAdd]: [{ id: number, inView: boolean }[]];
   [EventBusEvent.onWatchlistRemove]: [{ id: number, inView: boolean }[]];
   [EventBusEvent.staticOffsetChange]: [number];
-  [EventBusEvent.onLineAdded]: [LineManager];
-  [EventBusEvent.onLinesCleared]: [LineManager];
   [EventBusEvent.sensorDotSelected]: [DetailedSensor];
   [EventBusEvent.canvasMouseDown]: [MouseEvent];
-  [EventBusEvent.touchStart]: [TapTouchEvent | PanTouchEvent];
   [EventBusEvent.onCruncherMessage]: [];
   [EventBusEvent.onCruncherReady]: [];
   [EventBusEvent.onHelpMenuClick]: [];
   [EventBusEvent.onKeepTrackReady]: [];
-  [EventBusEvent.selectSatData]: [DetailedSatellite | MissileObject | BaseObject, number];
   [EventBusEvent.setSecondarySat]: [DetailedSatellite | null, number];
   [EventBusEvent.uiManagerInit]: [];
   [EventBusEvent.uiManagerOnReady]: [];
-  [EventBusEvent.updateSelectBox]: [DetailedSatellite | MissileObject];
   [EventBusEvent.ConeMeshUpdate]: [];
   [EventBusEvent.bottomMenuModeChange]: [];
   [EventBusEvent.saveSettings]: [];
@@ -60,9 +51,6 @@ export interface EngineEventMap {
   [EventBusEvent.satInfoBoxInit]: [];
   [EventBusEvent.satInfoBoxFinal]: [];
   [EventBusEvent.error]: [Error, string]; // error, function name
-  [EventBusEvent.userAccountChange]: [User | null]; // user
-  [EventBusEvent.userLogin]: [User | null]; // user
-  [EventBusEvent.userLogout]: []; // no arguments
   [EventBusEvent.SceneReady]: []; // no arguments
   [EventBusEvent.highPerformanceRender]: [Milliseconds]; // delta time
 }

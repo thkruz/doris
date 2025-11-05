@@ -1,4 +1,11 @@
-import { ClickDragOptions } from '@app/engine/plugins/base-plugin';
+type ClickDragOptions = {
+  minWidth?: number;
+  maxWidth?: number;
+  attachedElement?: HTMLElement;
+  leftOffset?: boolean;
+  callback?: () => void;
+  isDraggable?: boolean;
+};
 
 export const clickAndDragWidth = (el: HTMLElement | null, options: ClickDragOptions = {
   isDraggable: true,

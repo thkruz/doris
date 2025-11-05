@@ -1,5 +1,4 @@
-import { ColorSchemeParams } from '@app/app/rendering/color-schemes/color-scheme';
-import { BaseObject, Degrees, DetailedSatellite, Kilometers, Meters, Milliseconds, Radians, SpaceObjectType, Vec3Flat, ZoomValue } from '@ootk/src/main';
+import { Degrees, DetailedSatellite, Kilometers, Meters, Milliseconds, Radians, SpaceObjectType, Vec3Flat, ZoomValue } from '@ootk/src/main';
 
 /** Array of ECI Coordinates [x, y, z] */
 export type EciArr3 = Vec3Flat<number>;
@@ -231,8 +230,6 @@ export interface ColorRuleParams {
   satInSun?: Int8Array;
   satInView?: Int8Array;
 }
-
-export type ColorRuleSet = (obj: BaseObject, params?: ColorSchemeParams) => ColorInformation;
 
 /**
  ***********************************************************

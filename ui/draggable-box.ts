@@ -1,10 +1,8 @@
-import { errorManagerInstance } from '@app/engine/utils/errorManager';
-import { getEl, showEl } from '@app/engine/utils/get-el';
-import { SoundNames } from '@app/plugins/sounds/sounds';
 import Draggabilly from 'draggabilly';
 import { html } from '../utils/development/formatter';
+import { errorManagerInstance } from '../utils/errorManager';
+import { getEl, showEl } from '../utils/get-el';
 import './engine-ui.css';
-import { ServiceLocator } from '../core/service-locator';
 
 interface DraggableBoxOptions {
   width?: string;
@@ -129,7 +127,7 @@ export abstract class DraggableBox {
   close(cb?: () => void) {
     if (this.boxEl) {
       this.boxEl.style.display = 'none';
-      ServiceLocator.getSoundManager()?.play(SoundNames.CLICK);
+      // ServiceLocator.getSoundManager()?.play(SoundNames.CLICK);
       if (cb) {
         cb();
       }
@@ -139,7 +137,7 @@ export abstract class DraggableBox {
   dock(cb?: () => void) {
     if (this.boxEl) {
       this.boxEl.style.display = 'none';
-      ServiceLocator.getSoundManager()?.play(SoundNames.CLICK);
+      // ServiceLocator.getSoundManager()?.play(SoundNames.CLICK);
       if (cb) {
         cb();
       }

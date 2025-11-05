@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "strict": true,
+    "strictPropertyInitialization": false, // Add this line
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@engine/*": [
+        "./*"
+      ],
+      "@ootk/*": [
+        "./ootk/*"
+      ]
+    }
+  },
+  "exclude": [
+    "**/ootk/examples/**",
+    "**/*.test.*"
+  ]
+}

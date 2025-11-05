@@ -4,15 +4,10 @@
 export enum EventBusEvent {
   onHelpMenuClick = 'onHelpMenuClick',
   /**
-   * Run at the end of SelectSatManager.selectSat with parameters (sat: SatObject, satId: number)
-   */
-  selectSatData = 'selectSatData',
-  /**
    * Run at the end of catalogManager.setSecondarySat with parameters (sat: SatObject, satId: number)
    */
   setSecondarySat = 'setSecondarySat',
   onKeepTrackReady = 'onKeepTrackReady',
-  updateSelectBox = 'updateSelectBox',
   onCruncherReady = 'onCruncherReady',
   onCruncherMessage = 'onCruncherMessage',
   uiManagerInit = 'uiManagerInit',
@@ -42,7 +37,7 @@ export enum EventBusEvent {
   changeSensorMarkers = 'changeSensorMarkers',
   resize = 'resize',
   altCanvasResize = 'altCanvasResize',
-  endOfDraw = 'endOfDraw',
+  draw = 'endOfDraw',
   /**
    * Run in the updateWatchlist method of CatalogManager instance with parameters (watchlist: number[])
    */
@@ -54,15 +49,10 @@ export enum EventBusEvent {
    */
   staticOffsetChange = 'staticOffsetChange',
   /**
-   * Runs when a line is added to the line manager
-   */
-  onLineAdded = 'onLineAdded',
-  /**
    * Runs when a sensor dot is selected but not when a sensor is selected from the sensor menu
    */
   sensorDotSelected = 'sensorDotSelected',
   canvasMouseDown = 'canvasMouseDown',
-  touchStart = 'touchStart',
   ConeMeshUpdate = 'ConeMeshUpdate',
   bottomMenuModeChange = 'bottomMenuModeChange',
   saveSettings = 'saveSettings',
@@ -76,15 +66,11 @@ export enum EventBusEvent {
   satInfoBoxInit = 'satInfoBoxInit',
   satInfoBoxFinal = 'satInfoBoxFinal',
   error = 'error',
-  userAccountChange = 'userAccountChange',
-  userLogin = 'userSignedIn',
-  userLogout = 'userLogout',
   KeyUp = 'inputEvent:keyup',
   KeyDown = 'inputEvent:keydown',
   KeyPress = 'inputEvent:keypress',
   SceneReady = 'SceneReady',
   highPerformanceRender = 'highPerformanceRender',
-  onLinesCleared = 'onLinesCleared',
   selectedDateChange = 'selectedDateChange',
   calculateSimulationTime = 'calculateSimulationTime',
 }

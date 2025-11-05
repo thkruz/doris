@@ -1,6 +1,6 @@
 
-import { errorManagerInstance } from '@app/engine/utils/errorManager';
-import { getEl } from '@app/engine/utils/get-el';
+import { errorManagerInstance } from '@engine/utils/errorManager';
+import { getEl } from '@engine/utils/get-el';
 import Draggabilly from 'draggabilly';
 import { html } from '../utils/development/formatter';
 import { showEl } from '../utils/get-el';
