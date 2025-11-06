@@ -1,7 +1,7 @@
-import Draggabilly from 'draggabilly';
-import './engine-ui.css';
 import { html } from '@engine/utils/development/formatter';
 import { getEl, showEl } from '@engine/utils/get-el';
+import Draggabilly from 'draggabilly';
+import './engine-ui.css';
 
 interface DraggableBoxOptions {
   width?: string;
@@ -83,7 +83,8 @@ export abstract class DraggableBox {
       }
 
       // Center the box after cb to ensure correct offsetHeight/offsetWidth
-      boxContent.style.top = `${(window.innerHeight - boxContent.offsetHeight) / 2}px`;
+      // Set the top based on the current position in the window (we may have scrolled  the page)
+      boxContent.style.top = `${(window.scrollY + (window.innerHeight - boxContent.offsetHeight) / 2)}px`;
       boxContent.style.left = `${(window.innerWidth - boxContent.offsetWidth) / 2}px`;
       this.sendToFront();
     } else {
@@ -111,7 +112,7 @@ export abstract class DraggableBox {
       });
       boxContent.addEventListener('mousedown', (e: MouseEvent) => {
         if (e.button === 2) {
-          boxContent.style.top = `${(window.innerHeight - boxContent.offsetHeight) / 2}px`;
+          boxContent.style.top = `${(window.scrollY + (window.innerHeight - boxContent.offsetHeight) / 2)}px`;
           boxContent.style.left = `${(window.innerWidth - boxContent.offsetWidth) / 2}px`;
           this.sendToFront();
         }
