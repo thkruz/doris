@@ -1,8 +1,7 @@
 import Draggabilly from 'draggabilly';
-import { html } from '../utils/development/formatter';
-import { errorManagerInstance } from '../utils/errorManager';
-import { getEl, showEl } from '../utils/get-el';
 import './engine-ui.css';
+import { html } from '@engine/utils/development/formatter';
+import { getEl, showEl } from '@engine/utils/get-el';
 
 interface DraggableBoxOptions {
   width?: string;
@@ -50,7 +49,7 @@ export abstract class DraggableBox {
 
   open(cb?: () => void) {
     if (!this.boxEl) {
-      getEl('canvas-holder')!.insertAdjacentHTML('beforeend', html`
+      document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend', html`
         <div id="${this.boxId}" class="draggable-box" style="pointer-events:auto;">
           <div class="draggable-box__title-bar">
             <div class="draggable-box__title">
@@ -88,7 +87,7 @@ export abstract class DraggableBox {
       boxContent.style.left = `${(window.innerWidth - boxContent.offsetWidth) / 2}px`;
       this.sendToFront();
     } else {
-      errorManagerInstance.log(`Failed to open box: ${this.boxId}`);
+      console.log(`Failed to open box: ${this.boxId}`);
     }
   }
 
@@ -101,7 +100,7 @@ export abstract class DraggableBox {
 
     if (boxContent && !this.draggie) {
       this.draggie = new Draggabilly(boxContent, {
-        containment: getEl('canvas-holder')!,
+        containment: getEl('root')!,
       });
       this.draggie.on('dragStart', () => {
         boxContent.style.height = 'fit-content';

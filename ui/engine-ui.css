@@ -35,11 +35,11 @@
 }
 
 .draggable-box {
+  position: absolute;
   background-color: var(--color-dark-background);
   width: 300px;
   max-width: 90vw;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  position: relative;
   border-radius: var(--user-account-border-radius);
 }
 
