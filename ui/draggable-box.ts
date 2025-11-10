@@ -1,6 +1,6 @@
-import { html } from '@engine/utils/development/formatter';
-import { getEl, showEl } from '@engine/utils/get-el';
 import Draggabilly from 'draggabilly';
+import { html } from '../utils/development/formatter';
+import { getEl, showEl } from '../utils/get-el';
 import './engine-ui.css';
 
 interface DraggableBoxOptions {
